@@ -1,10 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { View } from 'react-native';}
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Contact() {
+  const navigation = useNavigation();
   return (
-    <View>
-    </View>
-  );
+    <View style={styles.container}>
+      <Text>Home</Text>
+      <TouchableOpacity 
+      style={styles.navButton}
+      onPress={() => navigation.navigate
+      ('Home')}
+      >
+        <Text>Home</Text>
+      </TouchableOpacity>
+      </View>
+  )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  navButton: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: 'lightgray',
+    color:'black',
+    borderRadius: 5,
+  }
+})
